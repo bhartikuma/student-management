@@ -38,7 +38,7 @@ public class App {
                             .append("age", age)
                             .append("course", course);
                     collection.insertOne(student);
-                    System.out.println("✅ Student added successfully!");
+                    System.out.println("Student added successfully!");
                     break;
 
                 case 2:
@@ -55,24 +55,24 @@ public class App {
                     String newCourse = sc.nextLine();
                     collection.updateOne(new Document("name", updateName),
                             new Document("$set", new Document("course", newCourse)));
-                    System.out.println("✅ Student updated successfully!");
+                    System.out.println("Student updated successfully!");
                     break;
 
                 case 4:
                     System.out.print("Enter student name to delete: ");
                     String deleteName = sc.nextLine();
                     collection.deleteOne(new Document("name", deleteName));
-                    System.out.println("❌ Student deleted successfully!");
+                    System.out.println("Student deleted successfully!");
                     break;
 
                 case 5:
-                    System.out.println("👋 Exiting...");
+                    System.out.println("Exiting...");
                     mongoClient.close();
                     System.exit(0);
                     break;
 
                 default:
-                    System.out.println("⚠ Invalid choice. Try again!");
+                    System.out.println("Invalid choice. Try again!");
             }
         }
     }
